@@ -3,38 +3,32 @@
 
 #include <linkbot.h>
 
-CLinkbotI robot;
-
 class Robot {
     private: 
         double radius;
         double trackwidth;
+        CLinkbotI * robot;
     
     public:
         Robot(double, double);
         
         void forward(double);
+        void left(double);
         
+        CLinkbotI * getRobot();
         void toString();
 };
 
-void Robot::toString(){
-    printf("Initialized robot!");
-    printf("Radius: %.2lf\nTrackwidth: %.2lf\n", radius, trackwidth);
-}
-
-void Robot::forward(double distance){
-    robot.driveDistance(distance, radius);
-}
-
-
-Robot::Robot (double radius, double trackwidth) {
-    this->radius = radius;
-    this->trackwidth = trackwidth;
+int main () {
+    Robot robot = Robot(RADIUS, TRACKWIDTH);
     
-    toString();
+    robot.forward(10);
     
 }
+
+
+
+#include "memberFunctions.ch"
 
 
 

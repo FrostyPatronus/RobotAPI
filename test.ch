@@ -1,7 +1,18 @@
-#include "robot.ch"
+#include <linkbot.h>
+//#include "robot.ch"
 
-int main () {
-    Robot robot = Robot(RADIUS, TRACKWIDTH);
-    robot.forward(10);
+CLinkbotI * robot (){
+    CLinkbotI * robot = new CLinkbotI();
+    return robot;
+}
 
+CLinkbotI getRobot(){
+    return *robot();
+}
+
+int main(){
+    
+    getRobot().driveDistance(15, 1.5);
+    (*robot()).driveDistance(15, 1.5);
+    
 }

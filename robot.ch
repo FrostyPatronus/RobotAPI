@@ -14,17 +14,12 @@ class Robot {
         
         void forward(double);
         void left(double);
+        void right(double);
+
         
         CLinkbotI * getRobot();
         void toString();
 };
-
-int main () {
-    Robot robot = Robot(RADIUS, TRACKWIDTH);
-    
-    robot.forward(10);
-    
-}
 
 
 

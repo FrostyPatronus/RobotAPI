@@ -9,7 +9,7 @@ Robot::Robot (double radius, double trackwidth) {
     toString();
 }
 
-CLinkbotI * Robot::getRobot(){
+CLinkbotI * Robot::getRobot() {
     return this->robot;
 }
 

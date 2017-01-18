@@ -13,10 +13,9 @@ class Robot {
         Robot(double, double);
         
         void forward(double);
-        void left(double);
-        void right(double);
+        void turnLeft(double);
+        void turnRight(double);
 
-        
         CLinkbotI * getRobot();
         void toString();
 };

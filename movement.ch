@@ -3,11 +3,11 @@ void Robot::forward(double distance){
     robot.driveDistance(distance, this->radius);
 }
 
-void Robot::left(double angle){
+void Robot::turnLeft(double angle){
     (*robot).turnLeft(angle, this->radius, this->trackwidth);
 }
 
 
-void Robot::right(double angle){
+void Robot::turnRight(double angle){
     (*robot).turnRight(angle, this->radius, this->trackwidth);
 }

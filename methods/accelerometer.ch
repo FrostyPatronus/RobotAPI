@@ -10,7 +10,6 @@ void Robot::onBump(void (*funcPtr)()) {
         
     while(abs(y2 - y1) < 0.03) {
         robot.getAccelerometerData(NULL, y2, NULL);
-        printf("%d\n", y2);
     }
     
     (*funcPtr)();

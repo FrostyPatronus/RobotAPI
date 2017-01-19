@@ -9,8 +9,8 @@ void helper() {
 
 int main(){  
     
-    robot2.turnLeft();
-    robot.turnLeft();
+    robot2.turnLeft(90);
+    robot.turnLeft(90);
     
     (*robot2.getRobot()).setSpeed(100, RADIUS);
     (*robot2.getRobot()).driveDistanceNB(10, RADIUS);

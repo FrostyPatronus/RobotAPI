@@ -3,11 +3,10 @@ void Robot::driveDistance(double distance){
     robot.driveDistance(distance, this->radius);
 }
 
-void Robot::turnLeft(double angle){
+void Robot::turnLeft(double angle=90){
     (*robot).turnLeft(angle, this->radius, this->trackwidth);
 }
 
-
-void Robot::turnRight(double angle){
+void Robot::turnRight(double angle=90){
     (*robot).turnRight(angle, this->radius, this->trackwidth);
 }

@@ -1,4 +1,5 @@
 #include "movement.ch"
+#include "accelerometer.ch"
 
 Robot::Robot (double radius, double trackwidth) {
     this->radius = radius;
@@ -14,8 +15,11 @@ CLinkbotI * Robot::getRobot() {
 }
 
 void Robot::toString(){
-    printf("Initialized robot!\n");
+    double voltage;
+    (*this->robot).getBatteryVoltage(voltage);
+    printf("\nInitialized robot!\n");
     printf("Radius: %.2lf\nTrackwidth: %.2lf\n", this->radius, this->trackwidth);
+    printf("Battery: %lf\n", voltage);
 }
 
 

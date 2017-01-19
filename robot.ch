@@ -12,17 +12,17 @@ class Robot {
     public:
         Robot(double, double);
         
-        void forward(double);
+        void driveDistance(double);
         void turnLeft(double);
         void turnRight(double);
+    
+        void onBump(void (*funcPtr)());
 
         CLinkbotI * getRobot();
         void toString();
 };
 
-
-
-#include "memberFunctions.ch"
+#include "./methods/main.ch"
 
 
 

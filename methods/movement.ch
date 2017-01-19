@@ -1,4 +1,4 @@
-void Robot::forward(double distance){
+void Robot::driveDistance(double distance){
     CLinkbotI robot = *this->getRobot();
     robot.driveDistance(distance, this->radius);
 }

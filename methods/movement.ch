@@ -14,3 +14,7 @@ void Robot::turnLeft(double angle){
 void Robot::turnRight(double angle){
     (*this->robot).turnRight(angle, this->radius, this->trackwidth);
 }
+
+void Robot::holdJoints(){
+    (*this->robot).holdJoints();
+}

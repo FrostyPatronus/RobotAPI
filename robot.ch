@@ -19,8 +19,11 @@ class Robot {
         void turnLeft(double);
         void turnRight(double);
     
+        void holdJoints();
+    
+        // Custom Functions
         void onBump(void (*funcPtr)());
-
+        
         CLinkbotI * getRobot();
         void toString();
 };

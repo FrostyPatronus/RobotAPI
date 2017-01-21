@@ -1,20 +1,19 @@
 #include "robot.ch"
 
-Robot robot = Robot(RADIUS, TRACKWIDTH);
-Robot robot2 = Robot(RADIUS, TRACKWIDTH);
+Robot robot = Robot(R, TW, 5);
+Robot robot2 = Robot(R, TW, 5);
 
 void helper() {
-    robot.turnLeft(90);
+    (*robot2.getRobot()).holdJoints();
+    robot.driveDistance(5);
+    
 }
 
 int main(){  
-    
     robot2.turnLeft(90);
-    robot.turnLeft(90);
-    
-    (*robot2.getRobot()).setSpeed(100, RADIUS);
-    (*robot2.getRobot()).driveDistanceNB(10, RADIUS);
-    
+    robot.turnRight(90);
+
+    robot2.driveDistanceNB(10);
     robot.onBump(helper);
     
 }

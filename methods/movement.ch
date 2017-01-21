@@ -1,12 +1,16 @@
 void Robot::driveDistance(double distance){
-    CLinkbotI robot = *this->getRobot();
+    CLinkbotI robot = *this->robot;
     robot.driveDistance(distance, this->radius);
 }
 
+void Robot::driveDistanceNB(double distance){
+    (*this->robot).driveDistanceNB(distance, this->radius);
+}
+
 void Robot::turnLeft(double angle){
-    (*robot).turnLeft(angle, this->radius, this->trackwidth);
+    (*this->robot).turnLeft(angle, this->radius, this->trackwidth);
 }
 
 void Robot::turnRight(double angle){
-    (*robot).turnRight(angle, this->radius, this->trackwidth);
+    (*this->robot).turnRight(angle, this->radius, this->trackwidth);
 }

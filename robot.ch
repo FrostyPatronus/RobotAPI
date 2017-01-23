@@ -16,8 +16,10 @@ class Robot {
         void driveDistance(double);
         void driveDistanceNB(double);
 
-        void turnLeft(double);
-        void turnRight(double);
+        void turnLeft(...);
+        void turnLeftNB(double);
+        void turnRight(...);
+        void turnRightNB(double);
     
         void holdJoints();
     

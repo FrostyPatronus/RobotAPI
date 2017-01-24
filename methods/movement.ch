@@ -45,3 +45,11 @@ void Robot::turnRightNB(double angle){
 void Robot::holdJoints(){
     (*this->robot).holdJoints();
 }
+
+void Robot::driveAngle(double angle){
+    (*this->robot).driveAngle(angle);
+}
+
+void Robot::driveAngleNB(double angle){
+    (*this->robot).driveAngleNB(angle);
+}

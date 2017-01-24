@@ -4,13 +4,17 @@
 #include <linkbot.h>
 
 class Robot {
+    static double defaultR;
+    static double defaultTW;
+    static double defaultSpeed;
+    
     private: 
         double radius;
         double trackwidth;
         CLinkbotI * robot;
     
     public:
-        Robot(double, double, double);
+        Robot(...);
         void setSpeed(double);
         CLinkbotI * getRobot();
         void toString();

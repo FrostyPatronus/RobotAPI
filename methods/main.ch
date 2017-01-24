@@ -1,15 +1,22 @@
 #include "movement.ch"
 #include "accelerometer.ch"
 
-Robot::Robot (double radius, double trackwidth, double speed) {
-    this->radius = radius;
-    this->trackwidth = trackwidth;
-        
+Robot::Robot (...) {
     this->robot = new CLinkbotI();
+
+    va_list args;
+    va_start(args, 3);
     
-    this->setSpeed(speed);
+    if (va_count(args) == 1){
+        // double speed = va_arg(args, double);
+        //printf("__SPEED__: %lf", speed);
+        this->radius = Robot::defaultR;
+        this->trackwidth = Robot::defaultTW;
+        this->setSpeed(3.1);
+    }
     
     toString();
+    va_end(args);
 }
 
 CLinkbotI * Robot::getRobot() {

@@ -1,8 +1,11 @@
 #include <stdarg.h>
 #include "robot.ch"
 
-Robot robot = Robot(R, TW, 5);
-Robot robot2 = Robot(R, TW, 5);
+double Robot::defaultR = R;
+double Robot::defaultTW = TW;
+
+Robot robot = Robot(1.1);
+Robot robot2 = Robot(1.1);
 
 void helper() {
     robot2.holdJoints();

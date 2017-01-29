@@ -1,24 +1,26 @@
 #include <stdarg.h>
+#include <linkbot.h>
 
 class Preet {
-    static int speed;
 
     public:
+        CLinkbotI * robot;
+        CLinkbotI & getRobot();
         Preet();
-        void handlebar(double, ...);
 };
 
-int Preet::speed = 1;
+CLinkbotI & Preet::getRobot(){
+    return *this->robot;
+}
 
 Preet::Preet() {
-    
-    //Preet::speed = 2;
-    printf(Preet::speed);
-    
+    this->robot = new CLinkbotI();
 }
 
 int main () {
     //Preet::speed = 2;
-
     Preet obj;
+    
+    // printf(obj.robot);
+    obj.getRobot().driveDistance(1, 1);
 }

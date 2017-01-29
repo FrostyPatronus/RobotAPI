@@ -7,34 +7,42 @@ Robot::Robot (...) {
     va_list args;
     va_start(args, 3);
     
-    if (va_count(args) == 1){
-        double speed = va_arg(args, double);
-        
-        // Checks if defaultR and defaultTW is defined
-        if (!Robot::defaultR && !Robot::defaultTW){
-            //Error message
-            puts("Define defaultR and/or defaultTW");
-            puts("You can do this this by putting these before initializing the robots:");
-            puts("defaultR = [number]");
-            puts("defaultTW = [number]");
-
-            exit(-1);
-        } else {
-            this->radius = Robot::defaultR;
-            this->trackwidth = Robot::defaultTW;
+    int i;
+    for (i = 0; i < 3; i++){
+        switch(i) {
+            case 0:
+                if(!Robot::defaultR) {
+                    double argument = va_arg(args, double);
+                    this->radius = argument;
+                } else {
+                    this->radius = Robot::defaultR;
+                }
+                break;
+                
+            case 1:
+                if(!Robot::defaultTW) {
+                    double argument = va_arg(args, double);
+                    this->trackwidth = argument;
+                } else {
+                    this->trackwidth = Robot::defaultTW;
+                }
+                break;
+                
+            case 2:
+                if(!Robot::defaultSpeed) {
+                    double argument = va_arg(args, double);
+                    this->setSpeed(argument);
+                } else {
+                    this->radius = Robot::defaultSpeed;
+                }
+                break;
         }
-        this->setSpeed(speed);
         
-    } else if (va_count(args) == 2){
-        double radius = va_arg(args, double);
-        double trackwidth = va_arg(args, double);
-
-        this->radius = radius;
-        this->trackwidth = trackwidth;
     }
     
-    toString();
+    this->toString();
     va_end(args);
+    
 }
 
 CLinkbotI * Robot::getRobot() {

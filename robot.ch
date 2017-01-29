@@ -11,9 +11,9 @@ class Robot {
         CLinkbotI * robot;
     
     public:
-        static double defaultR;
-        static double defaultTW;    
-        static double defaultSpeed;
+        static double defaultR; // Default Radius
+        static double defaultTW; // Default Trackwidth
+        static double defaultSpeed; // Default Speed
     
         Robot(...);
         void setSpeed(double);
@@ -35,9 +35,9 @@ class Robot {
         void onBump(void (*funcPtr)());
 };
 
-// Default values
 double Robot::defaultR = NULL;
 double Robot::defaultTW = NULL;
+double Robot::defaultSpeed = NULL;
 
 #include "./methods/main.ch"
 

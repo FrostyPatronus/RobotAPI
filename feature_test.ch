@@ -1,26 +1,9 @@
 #include <stdarg.h>
 #include <linkbot.h>
 
-class Preet {
-
-    public:
-        CLinkbotI * robot;
-        CLinkbotI & getRobot();
-        Preet();
-};
-
-CLinkbotI & Preet::getRobot(){
-    return *this->robot;
-}
-
-Preet::Preet() {
-    this->robot = new CLinkbotI();
-}
+CLinkbotI robot;
 
 int main () {
-    //Preet::speed = 2;
-    Preet obj;
+    robot.move(90, NaN, 45);
     
-    // printf(obj.robot);
-    obj.getRobot().driveDistance(1, 1);
 }

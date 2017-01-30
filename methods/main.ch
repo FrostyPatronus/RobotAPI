@@ -7,6 +7,7 @@ Robot::Robot (...) {
     va_list args;
     va_start(args, 3);
     
+    // Dyanamic argument counts
     int i;
     for (i = 0; i < 3; i++){
         switch(i) {
@@ -37,8 +38,10 @@ Robot::Robot (...) {
                 }
                 break;
         }
-        
     }
+    
+    // Stops robots when program is stopped.
+    // this->holdJointsAtExit();
     
     this->toString();
     va_end(args);

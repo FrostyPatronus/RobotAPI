@@ -1,3 +1,13 @@
+
+// Moves joint to an ABSOLUTE angle
+void Robot::moveTo(double angle1, double angle2) {
+    (*this->robot).moveTo(angle1, NaN, angle2);
+}
+
+void Robot::holdJointsAtExit() {
+    (*this->robot).holdJointsAtExit();
+}
+
 void Robot::driveDistance(double distance){
     (*this->robot).driveDistance(distance, this->radius);
 }

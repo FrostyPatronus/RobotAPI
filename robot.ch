@@ -21,6 +21,8 @@ class Robot {
         void toString();
 
         // Movement
+        void moveTo(double ,double);
+        void holdJointsAtExit();
         void driveDistance(double);
         void driveDistanceNB(double);
         void turnLeft(...);

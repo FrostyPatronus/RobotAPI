@@ -37,6 +37,7 @@ class Robot {
         // Custom Functions
         void onBump(void (*funcPtr)());
         void driveCircle(double, double);   // Circle Radius, Speed
+        void driveCircleNB(double, double);
 };
 
 double Robot::defaultR = NULL;

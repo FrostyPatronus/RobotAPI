@@ -1,6 +1,7 @@
 #include "movement.ch"
 #include "accelerometer.ch"
 #include "misc.ch"
+#include "circles.ch"
 
 Robot::Robot (...) {
     this->robot = new CLinkbotI();

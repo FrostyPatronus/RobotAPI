@@ -32,9 +32,11 @@ class Robot {
         void holdJoints();
         void driveAngle(double);
         void driveAngleNB(double);
+        
     
         // Custom Functions
         void onBump(void (*funcPtr)());
+        void driveCircle(double, double);   // Circle Radius, Speed
 };
 
 double Robot::defaultR = NULL;

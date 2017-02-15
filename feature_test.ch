@@ -1,9 +1,11 @@
 #include <stdarg.h>
 #include <linkbot.h>
 
-CLinkbotI robot;
+void test(CLinkbotI robot) {
+    robot.driveDistance(10, 1.75);
+}
 
-int main () {
-    robot.move(90, NaN, 45);
-    
+int main() {
+    CLinkbotI robot;
+    test(robot);
 }

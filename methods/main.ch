@@ -1,6 +1,7 @@
 #include "movement.ch"
 #include "accelerometer.ch"
 #include "misc.ch"
+#include "circle.ch"
 
 Robot::Robot (...) {
     this->robot = new CLinkbotI();
@@ -46,6 +47,10 @@ Robot::Robot (...) {
     this->toString();
     va_end(args);
     
+}
+
+void Robot::connect(string_t serial) {
+    (*this->robot).connectWithSerialID(serial);
 }
 
 CLinkbotI * Robot::getRobot() {

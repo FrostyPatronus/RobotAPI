@@ -19,8 +19,13 @@ class Robot {
         void setSpeed(double);
         CLinkbotI * getRobot();
         void toString();
+        void connect(string_t);
 
         // Movement
+        void setJointSpeeds(double, double); 
+        void driveCircle(double, double);
+        void driveCircleNB(double, double);
+        void driveForeverNB();
         void moveTo(double ,double);
         void holdJointsAtExit();
         void driveDistance(double);

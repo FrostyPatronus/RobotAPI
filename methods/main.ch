@@ -1,7 +1,7 @@
 #include "movement.ch"
 #include "accelerometer.ch"
 #include "misc.ch"
-#include "circle.ch"
+#include "circles.ch"
 
 Robot::Robot (...) {
     this->robot = new CLinkbotI();
@@ -34,8 +34,10 @@ Robot::Robot (...) {
                 if(!Robot::defaultSpeed) {
                     double argument = va_arg(args, double);
                     this->setSpeed(argument);
+                    this->speed = argument;
+
                 } else {
-                    this->radius = Robot::defaultSpeed;
+                    this->speed = Robot::defaultSpeed;
                 }
                 break;
         }
@@ -50,7 +52,7 @@ Robot::Robot (...) {
 }
 
 void Robot::connect(string_t serial) {
-    (*this->robot).connectWithSerialID(serial);
+    this->robot->connectWithSerialID(serial);
 }
 
 CLinkbotI * Robot::getRobot() {
@@ -69,5 +71,7 @@ void Robot::setSpeed(double speed) {
     (*this->robot).setSpeed(speed, this->radius);
 }
 
-
+void Robot::setLEDColor(string_t color) {
+    this->robot->setLEDColor(color);
+}
 

@@ -1,5 +1,17 @@
+void Robot::moveRight(double angle) {
+    this->robot->move(0, NaN, -angle);
+}
+
+void Robot::moveLeft(double angle) {
+    this->robot->move(angle, NaN, 0);
+}
+
+void Robot::move(double angle1, double angle2) {
+    this->robot->move(angle1, NaN, -angle2);
+}
+
 void Robot::setJointSpeeds(double speed1, double speed2) {
-    robot->setJointSpeeds(speed1, NaN, speed2);
+    robot->setJointSpeeds(32*speed1, NaN, 32*speed2);
 }
 
 void Robot::driveForeverNB() {

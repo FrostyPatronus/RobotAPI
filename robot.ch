@@ -8,6 +8,7 @@ class Robot {
     private: 
         double radius;
         double trackwidth;
+        double speed;
         CLinkbotI * robot;
     
     public:
@@ -22,9 +23,13 @@ class Robot {
         void connect(string_t);
 
         // Movement
+        void moveRight(double);
+        void moveLeft(double);
+        void move(double, double);
         void setJointSpeeds(double, double); 
         void driveCircle(double, double);
         void driveCircleNB(double, double);
+        void driveConcentric(Robot*, double, double, double);
         void driveForeverNB();
         void moveTo(double ,double);
         void holdJointsAtExit();
@@ -37,9 +42,11 @@ class Robot {
         void holdJoints();
         void driveAngle(double);
         void driveAngleNB(double);
-    
+        void setLEDColor(string_t);
+
         // Custom Functions
         void onBump(void (*funcPtr)());
+        void driveSpeedRatio(double, double, double, double);
 };
 
 double Robot::defaultR = NULL;

@@ -39,7 +39,7 @@ void Robot::driveCircleNB(double circleRadius, double speed1) {
 }
 
 // Creates function driveConcentric
-void driveConcentric(CLinkbotI * robot2, double r, double gap, double speed1) {
+void Robot::driveConcentric(Robot * robot2, double r, double gap, double speed1) {
     double radius = 1.75;   // Of wheel
     double trackwidth = 3.69;
     double C1, C2, C3, C4;          // Of circle the robot will be driving in
@@ -85,7 +85,7 @@ void driveConcentric(CLinkbotI * robot2, double r, double gap, double speed1) {
     printf("Speed4: %lf\n", speed4);
 
     this->robot->setJointSpeeds(speed1, NaN, speed2);
-    robot2->getRobot->setJointSpeeds(speed3, NaN, speed4);
+    robot2->setJointSpeeds(speed3, speed4);
     this->robot->moveNB(degreesI, NaN, -degreesO);       // Use ratio to find degrees so that both will stop at the same time
     robot2->getRobot()->move(degreesI2, NaN, -degreesO2);
 }

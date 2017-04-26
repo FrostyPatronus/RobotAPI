@@ -8,41 +8,28 @@ Robot::Robot (...) {
     va_list args;
     va_start(args, 3);
     
-    // Dyanamic argument counts
-    int i;
-    for (i = 0; i < 3; i++){
-        switch(i) {
-            case 0:
-                if(!Robot::defaultR) {
-                    double argument = va_arg(args, double);
-                    this->radius = argument;
-                } else {
-                    this->radius = Robot::defaultR;
-                }
-                break;
-                
-            case 1:
-                if(!Robot::defaultTW) {
-                    double argument = va_arg(args, double);
-                    this->trackwidth = argument;
-                } else {
-                    this->trackwidth = Robot::defaultTW;
-                }
-                break;
-                
-            case 2:
-                if(!Robot::defaultSpeed) {
-                    double argument = va_arg(args, double);
-                    this->setSpeed(argument);
-                    this->speed = argument;
+    if(!Robot::defaultR) {
+        double argument = va_arg(args, double);
+        this->radius = argument;
+	} else {
+	    this->radius = Robot::defaultR;
+	}
+	
+	if(!Robot::defaultTW) {
+	    double argument = va_arg(args, double);
+	    this->trackwidth = argument;
+	} else {
+	    this->trackwidth = Robot::defaultTW;
+	}
+	
+	if(!Robot::defaultSpeed) {
+	    double argument = va_arg(args, double);
+	    this->setSpeed(argument);
+	    this->speed = argument;
 
-                } else {
-                    this->speed = Robot::defaultSpeed;
-                }
-                break;
-        }
-    }
-    
+	} else {
+	    this->speed = Robot::defaultSpeed;
+	}    
     // Stops robots when program is stopped.
     // this->holdJointsAtExit();
     

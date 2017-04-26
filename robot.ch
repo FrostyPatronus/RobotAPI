@@ -43,14 +43,18 @@ class Robot {
         void driveAngle(double);
         void driveAngleNB(double);
         void setLEDColor(string_t);
-
+        void moveJoint(int, double);
+        void moveJointNB(int, double);
+        void setJointSpeed(double ,double);
+        
         // Custom Functions
         void onBump(void (*funcPtr)());
         void driveSpeedRatio(double, double, double, double);
 };
 
-double Robot::defaultR = NULL;
-double Robot::defaultTW = NULL;
+double Robot::defaultR = 1.75;
+double Robot::defaultTW = 3.69;
+
 double Robot::defaultSpeed = NULL;
 
 #include "./methods/main.ch"

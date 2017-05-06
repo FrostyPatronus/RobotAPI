@@ -20,7 +20,7 @@ void Robot::move(double angle1, double angle2) {
 }
 
 void Robot::setJointSpeeds(double speed1, double speed2) {
-    robot->setJointSpeeds(32*speed1, NaN, 32*speed2);
+    robot->setJointSpeeds(speed1, NaN, speed2);
 }
 
 void Robot::setJointSpeed(double joint, double speed) {

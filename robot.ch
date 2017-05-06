@@ -49,7 +49,7 @@ class Robot {
         
         // Custom Functions
         void onBump(void (*funcPtr)());
-        void driveSpeedRatio(double, double, double, double);
+        void circle(double, double);
 };
 
 double Robot::defaultR = 1.75;

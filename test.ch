@@ -2,4 +2,4 @@
 
 Robot robot = Robot(5);
 
-robot.driveDistance(10);
+robot.circle(-10, 1);

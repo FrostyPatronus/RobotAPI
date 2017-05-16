@@ -1,4 +1,4 @@
-void Robot::driveCircle(double circleRadius, double speed1) {
+/*void Robot::driveCircle(double circleRadius, double speed1) {
 
     double C1, C2;            // Of circle the robot will be driving in
     double degreesI, degreesO;
@@ -89,3 +89,4 @@ void Robot::driveConcentric(Robot * robot2, double r, double gap, double speed1)
     this->robot->moveNB(degreesI, NaN, -degreesO);       // Use ratio to find degrees so that both will stop at the same time
     robot2->getRobot()->move(degreesI2, NaN, -degreesO2);
 }
+*/

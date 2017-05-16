@@ -3,11 +3,11 @@
 
 void Robot::circle(double radius, double loops) {
     if (radius > 0) {
-        this->setJointSpeeds(90, 90 + (67 * 10  / radius));
+        this->setJointSpeeds(90, (90 + 67 * 10  / radius), Robot::degree);
     } else { 
-        radius = -radius;
-        this->setJointSpeeds(90 + (67 * 10  / radius), 90);
+        this->setJointSpeeds(90 + (67 * 10  / (-radius)), 90, Robot::degree);
     }
     
-    this->driveDistance(3.23 * radius * loops);
+    
+    this->driveDistance(3.2 * abs(radius) * loops);
 }

@@ -19,8 +19,12 @@ void Robot::move(double angle1, double angle2) {
     this->robot->move(angle1, NaN, -angle2);
 }
 
-void Robot::setJointSpeeds(double speed1, double speed2) {
-    robot->setJointSpeeds(speed1, NaN, speed2);
+void Robot::setJointSpeeds(double speed1, double speed2, string_t type) {
+    if (type == "DEGREE") 
+        robot->setJointSpeeds(speed1, NaN, speed2);
+    else if (type == "INCH") 
+        robot->setJointSpeeds(speed1*Robot::degreeConv, NaN, speed2*Robot::degreeConv);
+
 }
 
 void Robot::setJointSpeed(double joint, double speed) {

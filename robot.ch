@@ -16,6 +16,10 @@ class Robot {
         static double defaultTW; // Default Trackwidth
         static double defaultSpeed; // Default Speed
     
+        static double degreeConv;
+        static string_t inch;
+        static string_t degree;
+    
         Robot(...);
         void setSpeed(double);
         CLinkbotI * getRobot();
@@ -26,7 +30,7 @@ class Robot {
         void moveRight(double);
         void moveLeft(double);
         void move(double, double);
-        void setJointSpeeds(double, double); 
+        void setJointSpeeds(double, double, string_t); 
         void driveCircle(double, double);
         void driveCircleNB(double, double);
         void driveConcentric(Robot*, double, double, double);
@@ -53,7 +57,11 @@ class Robot {
 };
 
 double Robot::defaultR = 1.75;
-double Robot::defaultTW = 3.69;
+double Robot::defaultTW = 4;
+
+string_t Robot::degree = "DEGREE";
+string_t Robot::inch = "INCH";
+double Robot::degreeConv = 32.727272;
 
 double Robot::defaultSpeed = NULL;
 

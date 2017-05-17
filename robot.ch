@@ -53,7 +53,9 @@ class Robot {
         
         // Custom Functions
         void onBump(void (*funcPtr)());
-        void circle(double, double);
+        void circle(double, double, double);
+        void circleNB(double, double, double);
+
 };
 
 double Robot::defaultR = 1.75;

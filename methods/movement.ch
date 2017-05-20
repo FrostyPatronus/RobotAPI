@@ -15,9 +15,23 @@ void Robot::moveLeft(double angle) {
     this->robot->move(angle, NaN, 0);
 }
 
-void Robot::move(double angle1, double angle2) {
+void Robot::moveI(double angle1, double angle2) {
+    this->robot->move(angle1*Robot::degreeConv, NaN, -angle2*Robot::degreeConv);
+}
+
+void Robot::moveD(double angle1, double angle2) {
     this->robot->move(angle1, NaN, -angle2);
 }
+
+
+void Robot::moveINB(double angle1, double angle2) {
+    this->robot->moveNB(angle1*Robot::degreeConv, NaN, -angle2*Robot::degreeConv);
+}
+
+void Robot::moveDNB(double angle1, double angle2) {
+    this->robot->moveNB(angle1, NaN, -angle2);
+}
+
 
 void Robot::setJointSpeeds(double speed1, double speed2, string_t type) {
     if (type == "DEGREE") 

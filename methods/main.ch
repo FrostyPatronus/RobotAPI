@@ -24,10 +24,11 @@ Robot::Robot (...) {
 	
 	if(!Robot::defaultSpeed) {
 	    double argument = va_arg(args, double);
-	    this->setSpeed(argument);
+	    this->setSpeed(argument, Robot::inch);
 	    this->speed = argument;
 
 	} else {
+        this->setSpeed(Robot::defaultSpeed, Robot::inch);
 	    this->speed = Robot::defaultSpeed;
 	}    
     // Stops robots when program is stopped.
@@ -42,9 +43,9 @@ void Robot::connect(string_t serial) {
     this->robot->connectWithSerialID(serial);
 }
 
-CLinkbotI * Robot::getRobot() {
+/*CLinkbotI * Robot::getRobot() {
     return this->robot;
-}
+}*/
 
 void Robot::toString(){
     double voltage;
@@ -54,8 +55,15 @@ void Robot::toString(){
     printf("Battery: %lf\n", voltage);
 }
 
-void Robot::setSpeed(double speed) {
-    (*this->robot).setSpeed(speed, this->radius);
+void Robot::setSpeed(double speed, string_t type) {
+    if(type == Robot::inch) {
+        this->speed = speed;
+        this->robot->setSpeed(speed, this->radius);
+    } else { // degrees per second
+        this->speed = speed / Robot::degreeConv;
+        this->robot->setSpeed(this->speed, this->radius);
+    }
+
 }
 
 void Robot::setLEDColor(string_t color) {

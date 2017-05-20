@@ -9,7 +9,7 @@ class Robot {
         double radius;
         double trackwidth;
         double speed;
-        CLinkbotI * robot;
+        //CLinkbotI * robot;
     
     public:
         static double defaultR; // Default Radius
@@ -21,15 +21,19 @@ class Robot {
         static string_t degree;
     
         Robot(...);
-        void setSpeed(double);
-        CLinkbotI * getRobot();
+        void setSpeed(double, string_t);
+        CLinkbotI * robot;
+        //CLinkbotI * getRobot();
         void toString();
         void connect(string_t);
 
         // Movement
         void moveRight(double);
         void moveLeft(double);
-        void move(double, double);
+        void moveI(double, double);
+        void moveINB(double, double);
+        void moveD(double, double);
+        void moveDNB(double, double);
         void setJointSpeeds(double, double, string_t); 
         void driveCircle(double, double);
         void driveCircleNB(double, double);
@@ -59,13 +63,13 @@ class Robot {
 };
 
 double Robot::defaultR = 1.75;
-double Robot::defaultTW = 4;
+double Robot::defaultTW = 3.75;
 
 string_t Robot::degree = "DEGREE";
 string_t Robot::inch = "INCH";
 double Robot::degreeConv = 32.727272;
 
-double Robot::defaultSpeed = NULL;
+double Robot::defaultSpeed = 4;
 
 #include "./methods/main.ch"
 
